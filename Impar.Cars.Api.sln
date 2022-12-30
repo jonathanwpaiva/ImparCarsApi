@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impar.Cars.Api", "Impar.Cars.Api\Impar.Cars.Api.csproj", "{0AEFDB2E-E743-4EA5-87AE-9F7D8E2F979A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AEFDB2E-E743-4EA5-87AE-9F7D8E2F979A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEFDB2E-E743-4EA5-87AE-9F7D8E2F979A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEFDB2E-E743-4EA5-87AE-9F7D8E2F979A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEFDB2E-E743-4EA5-87AE-9F7D8E2F979A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95AE8FA4-068C-4907-A535-B09BCA6ECCAB}
+	EndGlobalSection
+EndGlobal
