@@ -1,5 +1,4 @@
 ﻿using Impar.Cars.Api.Models;
-using Impar.Cars.Api.Repositories;
 using Impar.Cars.Api.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,10 +15,10 @@ namespace Impar.Cars.Api.Controllers
             _carRepository = carRepository;
         }
 
-        [HttpGet("cars")]
-        public async Task<IActionResult> GetCars()
+        [HttpGet("cars/{skip}/{take}")]
+        public async Task<IActionResult> GetCars([FromRoute] int skip, [FromRoute] int take)
         {
-            var cars = await _carRepository.GetCars();
+            var cars = await _carRepository.GetCars(skip, take);
             return Ok(cars);
         }
 
@@ -36,7 +35,6 @@ namespace Impar.Cars.Api.Controllers
         {
             await _carRepository.UpdateCar(id, car);
 
-
             return NoContent();
         }
 
@@ -48,6 +46,6 @@ namespace Impar.Cars.Api.Controllers
 
             return NoContent();
         }
-       
+
     }
 }

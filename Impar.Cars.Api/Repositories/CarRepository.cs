@@ -6,14 +6,13 @@ namespace Impar.Cars.Api.Repositories
 {
     public class CarRepository : ICarRepository
     {
-
         private readonly AppDbContext _dbContext;
 
         public CarRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public async Task<IList<CarDto>> GetCars()
+        public async Task<IList<CarDto>> GetCars(int skip, int take)
         {
             var cars = await _dbContext.Car.ToListAsync();
             var photos = await _dbContext.Photo.ToListAsync();
@@ -29,8 +28,8 @@ namespace Impar.Cars.Api.Repositories
                     Base64 = photos[i].Base64
                 });
             }
-
-            return carsList;
+            var carsToShow = carsList.Skip(skip).Take(take).ToList();
+            return carsToShow;
         }
 
         public async Task<CarDto> CreateCar(CarDto car)
@@ -50,7 +49,6 @@ namespace Impar.Cars.Api.Repositories
 
             _dbContext.Car.Add(newCar);
             await _dbContext.SaveChangesAsync();
-
 
             return car;
         }
@@ -80,7 +78,6 @@ namespace Impar.Cars.Api.Repositories
             photoToUpdate.Base64 = car.Base64;
 
             await _dbContext.SaveChangesAsync();
-
         }
     }
 }
